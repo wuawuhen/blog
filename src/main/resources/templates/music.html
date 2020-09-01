@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>音乐盒</title>
+    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css"></link>
+    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
+</head>
+<body>
+
+
+
+    <div class="">
+        <!--导航-->
+        <nav  th:replace="_fragments :: menu(3)" class="ui inverted attached segment m-padded-td-mini m-shadow-small" >
+
+        </nav>
+
+
+    </div>
+
+
+
+
+
+
+    <div class="site-brand-wrapper"   id="site-brand-wrapper-back" style="background-image:url(/images/7.jpg)" th:src="@{/images/7.jpg}" >
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="m-margin-top-maxx" align="center">
+            <img class="ui circular image" align="center"  src="../static/images/backimg.jpg" th:src="@{/images/14.jpg}" style="width: 150px;height: 150px;">
+        </div>
+        <br>
+        <div class="m-font-size-title-mediul" align="center">无痕</div>
+
+        <br>
+        <div class="" align="center">
+            <a href="#" class="ui tencent circular icon button"><i class="user icon"></i></a>
+            <a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>
+            <a href="#" class="ui qq circular icon button" data-content="1127481285" data-position="bottom center"><i class="qq icon"></i></a>
+            <a href="#" target="_blank" class="ui github circular icon button" data-content="点击跳转GitHub" data-position="bottom center"><i class="github icon"></i></a>
+            <a href="#" class="ui email circular icon button" data-content="wfwuhen@163.com" data-position="bottom center"><i class="envelope  icon"></i></a>
+        </div>
+    </div>
+
+    <p class="site-subtitle"></p>
+    </div>
+    <!--中间内容-->
+    <div class="ui wechatQR flowing popup transition hidden">
+        <img src="../static/images/14.jpg"th:src="@{/images/39.png}"  alt="" class="ui rounded image" style="width: 100px">
+    </div>
+    <!--中间内容-->
+    <div class="ui m-margin- m-opacity" align="center">
+
+            <link rel="stylesheet" href="../static/lib/music/APlayer.min.css" th:href="@{/lib/music/APlayer.min.css}">
+                        <div id="aplayer"></div>
+            <script  th:src="@{/lib/music/APlayer.min.js}"></script>
+
+    </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    })
+    $('.qq').popup();
+    $('.email').popup();
+    $('.github').popup();
+    $('.wechat').popup({
+        popup : $('.wechatQR'),
+        on :'hover',
+        position: 'bottom center'
+    });
+    var ap = new APlayer({
+        container: document.getElementById('aplayer'),
+        mini: false,
+        autoplay: false,
+        theme: '#FADFA3',
+        loop: 'all',
+        order: 'random',
+        preload: 'auto',
+        volume: 0.7,
+        mutex: true,
+        listFolded: false,
+        listMaxHeight: 90,
+        lrcType: 3,
+        audio: [{
+            name: '紅蓮華',
+            artist: 'LiSA',
+            url: '/lib/music/LiSA - 紅蓮華.mp3',
+            cover: '/images/7.jpg'
+        },
+            {
+                name: '虹の彼方に（Cover：ReoNa）.mp3',
+                artist: '睡莲Suiren',
+                url: '/lib/music/睡莲Suiren - 虹の彼方に（Cover：ReoNa）.mp3',
+                cover: '/images/21.jpg',
+
+
+            },
+            {
+                name: '心拍数＃0822.mp3',
+                artist: '新社会人',
+                url: '/lib/music/新社会人 - 心拍数＃0822.mp3',
+                cover: '/images/27.jpg',
+
+
+            }
+            ,
+            {
+                name: 'TOP (Japanese version).mp3',
+                artist: 'Stray Kids',
+                url: '/lib/music/TOP (Japanese version).mp3',
+                cover: '/images/25.jpg',
+
+
+            },
+            {
+                name: '梦不停歇.mp3',
+                artist: '池年',
+                url: '/lib/music/梦不停歇.mp3',
+                cover: '/images/28.jpg',
+
+
+            }
+            ,
+            {
+                name: 'gate new.mp3',
+                artist: '赛丽亚的旅馆(',
+                url: '/lib/music/Dungeon and Fighter - 赛丽亚的旅馆(ACT.5-大转移前) - gate new.mp3',
+                cover: '/images/23.jpg',
+
+
+            }
+            ,
+            {
+                name: '半道英雄(全职高手填词).mp3',
+                artist: '群星',
+                url: '/lib/music/群星 - 半道英雄(全职高手填词).mp3',
+                cover: '/images/26.jpg',
+                lrc: 'lrc2.lrc',
+
+            }
+        ]
+    });
+
+
+
+
+
+</script>
+</html>

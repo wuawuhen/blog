@@ -1,0 +1,16 @@
+spring:
+  thymeleaf:
+    mode: HTML5
+    cache: false
+    encoding: utf-8
+  profiles:
+    active: dev
+  messages:
+    basename: i18n/messages
+
+
+
+
+
+
+
