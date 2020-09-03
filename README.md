@@ -5,7 +5,7 @@ Markdown编辑器：编辑器 Markdown
 代码高亮：代码高亮 prism
 动画效果：动画 animate.css
 文章目录：目录生成 Tocbot
-音乐盒：zplayer
+音乐盒：aplayer
 照片墙：lightbox插件
 
 2.后端
